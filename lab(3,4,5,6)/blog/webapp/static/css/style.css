@@ -1,0 +1,114 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	padding: 30px;
+
+	background-color: #1abc9c;
+	font-family: Tahoma, Arial, sans-serif;
+	color: #ffffff;
+}
+
+header h1 {
+  display: inline;
+  background-color: #156759;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+a {
+  color: white;
+}
+
+h3 {
+	font-size: 32px;
+}
+
+header {
+  text-align: center;
+}
+.article {
+  margin-top: 10px;
+}
+
+.article h1 {
+	padding-top: 15px;
+}
+
+.article__about {
+  display: flex;
+  padding-top: 10px;
+}
+.article__about p  {
+  font-size: 14px;
+}
+.article__about p:last-child, .article__about div:last-child {
+  flex-grow: 1;
+  text-align: right;
+}
+.article__text {
+  padding-top: 20px;
+}
+
+.container {
+
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+
+	height: 100px;
+
+	margin: -30px;
+	margin-bottom: 30px;
+
+	border-bottom: 1px solid white;
+}
+
+.container h3, .container span {
+	margin-left: 30px;
+}
+
+.menu {
+	flex-grow: 1;
+	text-align: right;
+}
+
+.container  h3 > a, .menu a
+{
+	text-decoration: none;
+}
+.menu a {
+	margin-right: 30px;
+}
+
+form {
+	width: 250px;
+}
+form input, label {
+	display: block;
+}
+
+form input {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 3px;
+	border-radius: 3px;
+}
+
+form label {
+	padding: 5px 0;
+	font-size: 18px;
+}
+
+form button, input[type="submit"] {
+	width:100%;
+	background-color:#156757;
+	border-radius:2px;
+	color:#fff;
+	margin-top: 10px;
+	text-align:center;
+	border-color:#007bff;
+	padding: 15px;
+}

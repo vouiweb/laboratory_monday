@@ -1,0 +1,11 @@
+{% extends "webapp/header.html" %}
+
+{% block title %} Вы успешно вышли из аккаунта! {% endblock %}
+
+{% block data %}
+	<script>
+		setTimeout(function(){
+		  window.location.href = '/';
+		}, 100);
+	</script>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "webapp/header.html" %}
+
+{% block title %} {{post.title}} {% endblock %}
+
+{% block data %}
+		<header>
+			<h1>Django Public Blog</h1>
+			<nav><a href="/">Все статьи</a></nav>
+		</header>
+
+		<article class="article">
+			<h1>{{post.title}}</h1>
+			<div class="article__about">
+				<div class="article__about__author">{{post.author}}</div>
+				<div class="article__about__create">{{post.create}}</div>
+			</div>
+			<div class="article__text">
+				{{post.text}}
+			</div>
+		</article>
+
+		<style>
+			header {
+				display: flex;
+				justify-content: flex-start;
+				align-items: center;
+
+			}
+			header h1 {
+				display: block;
+			}
+			header nav {
+				flex-grow: 1;
+				text-align: right;
+			}
+
+			header nav a {
+				font-weight: bold;
+			}
+		</style>
+{% endblock %}

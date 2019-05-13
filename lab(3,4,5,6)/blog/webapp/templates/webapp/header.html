@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		
+		<meta name="robots" content="index">
+
+		<title> {% block title %} {% endblock %} </title>
+		
+		{% load staticfiles %}
+			<link rel="stylesheet" href="{% static 'css/style.css' %}"">
+	</head>
+	<body>
+		<div class="container">
+			<div>
+				<h3><a href="/">DJANGO-BLOG</a></h3>
+				{% if user.is_authenticated %}
+					<span>Добро пожаловать, {{request.user}}! </span>
+				{% endif %}
+			</div>
+			<div class="menu">
+				{% if user.is_authenticated %}
+					<a href="/create">Написать статью</a>
+					<a href="/exit">Выход</a>
+				{% else %}
+					<a href="/authorization" id="authorization">Вход</a>
+					<a href="/registration" id="registration">Регистрация</a>
+				{% endif %}
+			</div>
+		</div>
+
+		{% block data %}
+		{% endblock %}
+
+	</body>
+</html>

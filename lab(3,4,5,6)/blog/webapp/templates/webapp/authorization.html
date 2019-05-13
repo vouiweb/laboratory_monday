@@ -1,0 +1,20 @@
+{% extends "webapp/header.html" %}
+
+{% block data %}
+	<div class="container-auth">
+		<form class="form-auth" method="POST">
+			{% csrf_token %}
+			{{form}}
+			<button href="#">Войти</button>
+			<div id="auth-message">
+				<p>
+					{% if messages %}
+						{% for mes in messages %}
+							<p class="success">{{ mes }}</p>
+						{% endfor %}
+					{% endif %}
+				</p>
+			</div>
+		</form>
+	</div>
+{% endblock %}
