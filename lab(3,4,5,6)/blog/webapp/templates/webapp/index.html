@@ -7,8 +7,10 @@
 			<h1>Django public blog</h1>
 		</header>
 		{% for post in posts %}
-			<article class="article">
+			<article class="article" id="{{post.id}}">
 				<h1><a href="{% url 'articles' pk=post.id %}">{{post.title}}</a></h1>
+				<p class="Hide" style="text-align: right;">Скрыть</p>
+				<p class="Show" style="text-align: right; display: none">Показать</p>
 				<div class="article__about">
 					<p>{{post.author}}</p>
 					<p>{{post.create}}</p>
@@ -20,6 +22,31 @@
 		{% endfor %}
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		  <script type='text/javascript'> 
+		    $(document).ready(function() {
+		    	$(".Hide").click(function(){
+		    		var a = $(this).parent().attr('id');
+		    		
+		    		$("#" + a + " .Show").css("display", "block");
+		    		$("#" + a + " .article__about, " + "#" + a + " .article__text").fadeToggle(500);
+		    		$("#" + a + " .Hide").css("display", "none");
+		    	})
+		    	$(".Show").click(function(){
+		    		var b = $(this).parent().attr('id');
+		    		
+		    		$("#" + b + " .Show").css("display", "none");
+		    		$("#" + b + " .article__about, " + "#" + b + " .article__text").fadeIn(500);
+		    		$("#" + b + " .Hide").css("display", "block");
+		    	})
+		    })
+    
+		  </script> 
+		  <style>
+		  	p {
+		  		cursor: pointer;
+		  		
+		  	}
+		  </style>
 		<script>
 		$(".article__text").text(function(i, text) {
 
